@@ -3,7 +3,7 @@ require_once 'config.php';
 require_once 'vendor/autoload.php';
 session_start();
 $client = new Google_Client();
-$client->setAuthConfig('client_secret.json');
+$client->setAuthConfig(SECRET);
 $client->setRedirectUri(GOOGLECALLBACK);
 $client->setScopes(array('https://www.googleapis.com/auth/drive'));
 $client->setAccessType("offline");

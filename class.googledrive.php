@@ -15,7 +15,7 @@ class GoogleDriveManager {
 	private $client;
 	function __construct() {
 		$client = new Google_Client();
-		$client->setAuthConfig('client_secret.json');
+		$client->setAuthConfig(SECRET);
 		$client->setAccessType("offline");
 		$client->setApprovalPrompt('force');
 		$client->setScopes(array('https://www.googleapis.com/auth/drive'));

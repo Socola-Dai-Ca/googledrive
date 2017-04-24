@@ -4,7 +4,7 @@ session_start();
 require_once 'config.php';
 require_once  'vendor/autoload.php';
 $client = new Google_Client();
-$client->setAuthConfig('client_secret.json');
+$client->setAuthConfig(SECRET);
 $client->setAccessType("offline");
 $client->setApprovalPrompt('force');
 $client->setScopes(array('https://www.googleapis.com/auth/drive'));
