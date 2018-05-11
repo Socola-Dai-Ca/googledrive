@@ -80,7 +80,7 @@ class GoogleDriveManager {
 					$folderId,
 				),
 			));
-			echo $folderId;
+		
 			$content = file_get_contents($src);
 			$file = $this->service->files->create($fileMetadata, array(
 				'data' => $content,
@@ -249,12 +249,5 @@ class GoogleDriveManager {
 			echo 'Caught exception: ', $e->getMessage(), "\n";
 		}
 		return null;
-	}
-
-	function createZip($folderId) {
-		return $this->runGooleAppScript('zipFolderById', array($folderId));
-	}
-	function removeZip($folderId) {
-		return $this->runGooleAppScript('deleteZip', array($folderId));
 	}
 }
